@@ -1,0 +1,444 @@
+╭────────────────────╮
+│ AI News Aggregator │
+╰─ Fetching latest A─╯
+[16:10:23] ✓ Fetched 12 items from Hacker News               main.py:52
+[16:10:25] ✓ Fetched 14 items from Hugging Face Papers       main.py:52
+Failed to fetch r/ArtificialIntelligence: 403
+[16:10:29] ✓ Fetched 20 items from Reddit                    main.py:52
+[16:10:30] ✓ Fetched 50 items from Product Hunt              main.py:52
+[16:10:32] ✓ Fetched 10 items from GitHub Trending           main.py:52
+           ✓ Fetched 10 items from TechCrunch AI             main.py:52
+
+                            Latest AI News                             
+┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Source          ┃ Title                   ┃ Link                    ┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ Hacker News     │ If AI writes code,      │ https://github.com/man… │
+│                 │ should the session be   │                         │
+│                 │ part of the commit?     │                         │
+│ Hacker News     │ WebMCP is available for │ https://developer.chro… │
+│                 │ early preview           │                         │
+│ Hacker News     │ Evolving descriptive    │ https://www.bbc.com/fu… │
+│                 │ text of mental content  │                         │
+│                 │ from human brain        │                         │
+│                 │ activity                │                         │
+│ Hacker News     │ Show HN: Timber –       │ https://github.com/kos… │
+│                 │ Ollama for classical ML │                         │
+│                 │ models, 336x faster     │                         │
+│                 │ than Python             │                         │
+│ Hacker News     │ Right-sizes LLM models  │ https://github.com/Ale… │
+│                 │ to your system's RAM,   │                         │
+│                 │ CPU, and GPU            │                         │
+│ Hacker News     │ Microgpt explained      │ https://growingswe.com… │
+│                 │ interactively           │                         │
+│ Hacker News     │ Microgpt                │ http://karpathy.github… │
+│ Hacker News     │ I built a demo of what  │ https://99helpers.com/… │
+│                 │ AI chat will look like  │                         │
+│                 │ when it's “free” and    │                         │
+│                 │ ad-supported            │                         │
+│ Hacker News     │ 10-202: Introduction to │ https://modernaicourse… │
+│                 │ Modern AI (CMU)         │                         │
+│ Hacker News     │ Show HN: Logira – eBPF  │ https://github.com/mel… │
+│                 │ runtime auditing for AI │                         │
+│                 │ agent runs              │                         │
+│ Hacker News     │ We do not think         │ https://twitter.com/Op… │
+│                 │ Anthropic should be     │                         │
+│                 │ designated as a supply  │                         │
+│                 │ chain risk              │                         │
+│ Hacker News     │ Claude dethrones        │ https://www.axios.com/… │
+│                 │ ChatGPT as top U.S. app │                         │
+│                 │ after Pentagon saga     │                         │
+│ Hugging Face    │ dLLM: Simple Diffusion  │ https://huggingface.co… │
+│ Papers          │ Language Modeling       │                         │
+│ Hugging Face    │ Recovered in            │ https://huggingface.co… │
+│ Papers          │ Translation: Efficient  │                         │
+│                 │ Pipeline for Automated  │                         │
+│                 │ Translation of Ben...   │                         │
+│ Hugging Face    │ Enhancing Spatial       │ https://huggingface.co… │
+│ Papers          │ Understanding in Image  │                         │
+│                 │ Generation via Reward   │                         │
+│                 │ Modeling                │                         │
+│ Hugging Face    │ Mode Seeking meets Mean │ https://huggingface.co… │
+│ Papers          │ Seeking for Fast Long   │                         │
+│                 │ Video Generation        │                         │
+│ Hugging Face    │ CiteAudit: You Cited    │ https://huggingface.co… │
+│ Papers          │ It, But Did You Read    │                         │
+│                 │ It? A Benchmark for     │                         │
+│                 │ Verifying Scien...      │                         │
+│ Hugging Face    │ Accelerating Masked     │ https://huggingface.co… │
+│ Papers          │ Image Generation by     │                         │
+│                 │ Learning Latent         │                         │
+│                 │ Controlled Dynamics     │                         │
+│ Hugging Face    │ CUDA Agent: Large-Scale │ https://huggingface.co… │
+│ Papers          │ Agentic RL for          │                         │
+│                 │ High-Performance CUDA   │                         │
+│                 │ Kernel Generation       │                         │
+│ Hugging Face    │ Memory Caching: RNNs    │ https://huggingface.co… │
+│ Papers          │ with Growing Memory     │                         │
+│ Hugging Face    │ InfoNCE Induces         │ https://huggingface.co… │
+│ Papers          │ Gaussian Distribution   │                         │
+│ Hugging Face    │ Ref-Adv: Exploring MLLM │ https://huggingface.co… │
+│ Papers          │ Visual Reasoning in     │                         │
+│                 │ Referring Expression    │                         │
+│                 │ Tasks                   │                         │
+│ Hugging Face    │ SenCache: Accelerating  │ https://huggingface.co… │
+│ Papers          │ Diffusion Model         │                         │
+│                 │ Inference via           │                         │
+│                 │ Sensitivity-Aware       │                         │
+│                 │ Caching                 │                         │
+│ Hugging Face    │ LongVideo-R1: Smart     │ https://huggingface.co… │
+│ Papers          │ Navigation for Low-cost │                         │
+│                 │ Long Video              │                         │
+│                 │ Understanding           │                         │
+│ Hugging Face    │ DLEBench: Evaluating    │ https://huggingface.co… │
+│ Papers          │ Small-scale Object      │                         │
+│                 │ Editing Ability for     │                         │
+│                 │ Instruction-based...    │                         │
+│ Hugging Face    │ Vectorizing the Trie:   │ https://huggingface.co… │
+│ Papers          │ Efficient Constrained   │                         │
+│                 │ Decoding for LLM-based  │                         │
+│                 │ Generative...           │                         │
+│ Reddit          │ [R] Benchmarked 94 LLM  │ https://www.reddit.com… │
+│ r/MachineLearn… │ endpoints for jan 2026. │                         │
+│                 │ open source is now      │                         │
+│                 │ within 5 qu...          │                         │
+│ Reddit          │ [R] Toward Guarantees   │ https://www.reddit.com… │
+│ r/MachineLearn… │ for Clinical Reasoning  │                         │
+│                 │ in Vision Language      │                         │
+│                 │ Models via Fo...        │                         │
+│ Reddit          │ [R] CVPR 2026 Camera    │ https://www.reddit.com… │
+│ r/MachineLearn… │ Ready Paper             │                         │
+│ Reddit          │ [D] Simple Questions    │ https://www.reddit.com… │
+│ r/MachineLearn… │ Thread                  │                         │
+│ Reddit          │ [P] easy-torch-tpu:     │ https://www.reddit.com… │
+│ r/MachineLearn… │ Making it easy to train │                         │
+│                 │ PyTorch-based models on │                         │
+│                 │ Google TPUs             │                         │
+│ Reddit          │ [P] R2IR & R2ID:        │ https://www.reddit.com… │
+│ r/MachineLearn… │ Resolution Invariant    │                         │
+│                 │ Image Resampler and     │                         │
+│                 │ Diffuser - Trained ...  │                         │
+│ Reddit          │ [R] Detecting invariant │ https://www.reddit.com… │
+│ r/MachineLearn… │ manifolds in ReLU-based │                         │
+│                 │ RNNs                    │                         │
+│ Reddit          │ [P] Building A Tensor   │ https://www.reddit.com… │
+│ r/MachineLearn… │ micrograd               │                         │
+│ Reddit          │ [D] Self-Promotion      │ https://www.reddit.com… │
+│ r/MachineLearn… │ Thread                  │                         │
+│ Reddit          │ [R] Anyone who can      │ https://www.reddit.com… │
+│ r/MachineLearn… │ review my work and      │                         │
+│                 │ vouch for me on arXiv?  │                         │
+│ Reddit          │ Breaking : Today Qwen   │ https://www.reddit.com… │
+│ r/LocalLLaMA    │ 3.5 small               │                         │
+│ Reddit          │ Reverse engineered      │ https://www.reddit.com… │
+│ r/LocalLLaMA    │ Apple Neural            │                         │
+│                 │ Engine(ANE) to train    │                         │
+│                 │ Microgpt                │                         │
+│ Reddit          │ Running Qwen3.5 27b     │ https://www.reddit.com… │
+│ r/LocalLLaMA    │ dense with 170k context │                         │
+│                 │ at 100+t/s decode and   │                         │
+│                 │ ~1500t/s pr...          │                         │
+│ Reddit          │ we need to go deeper    │ https://www.reddit.com… │
+│ r/LocalLLaMA    │                         │                         │
+│ Reddit          │ 13 months since the     │ https://www.reddit.com… │
+│ r/LocalLLaMA    │ DeepSeek moment, how    │                         │
+│                 │ far have we gone        │                         │
+│                 │ running models loca...  │                         │
+│ Reddit          │ PSA: If your local      │ https://www.reddit.com… │
+│ r/LocalLLaMA    │ coding agent feels      │                         │
+│                 │ "dumb" at 30k+ context, │                         │
+│                 │ check your KV c...      │                         │
+│ Reddit          │ Qwen3.5 Small Dense     │ https://www.reddit.com… │
+│ r/LocalLLaMA    │ model release seems     │                         │
+│                 │ imminent.               │                         │
+│ Reddit          │ Qwen3.5 35b a3b first   │ https://www.reddit.com… │
+│ r/LocalLLaMA    │ small model to not      │                         │
+│                 │ hallucinate summarising │                         │
+│                 │ 50k token text          │                         │
+│ Reddit          │ Dense (non-thinking) >  │ https://www.reddit.com… │
+│ r/LocalLLaMA    │ MoE? Qwen-3.5-27B is    │                         │
+│                 │ blowing me away in      │                         │
+│                 │ coding                  │                         │
+│ Reddit          │ Qwen3.5-397B Uncensored │ https://www.reddit.com… │
+│ r/LocalLLaMA    │ NVFP4                   │                         │
+│ Product Hunt    │ CtrlAI                  │ https://www.producthun… │
+│ Product Hunt    │ Clean Clode             │ https://www.producthun… │
+│ Product Hunt    │ NothingHere             │ https://www.producthun… │
+│ Product Hunt    │ KatClaw™                │ https://www.producthun… │
+│ Product Hunt    │ Unfold                  │ https://www.producthun… │
+│ Product Hunt    │ Agent Commune           │ https://www.producthun… │
+│ Product Hunt    │ Voca AI                 │ https://www.producthun… │
+│ Product Hunt    │ JDoodleClaw             │ https://www.producthun… │
+│ Product Hunt    │ Aura                    │ https://www.producthun… │
+│ Product Hunt    │ The fastest identity    │ https://www.producthun… │
+│                 │ verification            │                         │
+│ Product Hunt    │ Expressive Mode for     │ https://www.producthun… │
+│                 │ ElevenAgents            │                         │
+│ Product Hunt    │ ChatWithAds             │ https://www.producthun… │
+│ Product Hunt    │ Rankfender              │ https://www.producthun… │
+│ Product Hunt    │ WEIR AI                 │ https://www.producthun… │
+│ Product Hunt    │ Mosaic                  │ https://www.producthun… │
+│ Product Hunt    │ Kimi Claw               │ https://www.producthun… │
+│ Product Hunt    │ GojiberryAI             │ https://www.producthun… │
+│ Product Hunt    │ Crawler.sh              │ https://www.producthun… │
+│ Product Hunt    │ Octrafic                │ https://www.producthun… │
+│ Product Hunt    │ BU                      │ https://www.producthun… │
+│ Product Hunt    │ Epismo Skills           │ https://www.producthun… │
+│ Product Hunt    │ OpenAI WebSocket Mode   │ https://www.producthun… │
+│                 │ for Responses API       │                         │
+│ Product Hunt    │ Hearica                 │ https://www.producthun… │
+│ Product Hunt    │ OpenFang                │ https://www.producthun… │
+│ Product Hunt    │ Simplora 2.0            │ https://www.producthun… │
+│ Product Hunt    │ Notra                   │ https://www.producthun… │
+│ Product Hunt    │ Claude Import Memory    │ https://www.producthun… │
+│ Product Hunt    │ Voicr                   │ https://www.producthun… │
+│ Product Hunt    │ Surfpool                │ https://www.producthun… │
+│ Product Hunt    │ Pixel                   │ https://www.producthun… │
+│ Product Hunt    │ PromptURLs              │ https://www.producthun… │
+│ Product Hunt    │ Claude in Excel         │ https://www.producthun… │
+│ Product Hunt    │ Study OS                │ https://www.producthun… │
+│ Product Hunt    │ theORQL                 │ https://www.producthun… │
+│ Product Hunt    │ Producer AI by Google   │ https://www.producthun… │
+│                 │ Labs                    │                         │
+│ Product Hunt    │ Google AI Edge Gallery  │ https://www.producthun… │
+│ Product Hunt    │ Solace                  │ https://www.producthun… │
+│ Product Hunt    │ SellShots               │ https://www.producthun… │
+│ Product Hunt    │ The Claw News           │ https://www.producthun… │
+│ Product Hunt    │ whatdoiwear.run         │ https://www.producthun… │
+│ Product Hunt    │ Nano Banana 2           │ https://www.producthun… │
+│ Product Hunt    │ lemonpod.ai             │ https://www.producthun… │
+│ Product Hunt    │ mvntSTUDIO              │ https://www.producthun… │
+│ Product Hunt    │ Claude Code Remote      │ https://www.producthun… │
+│                 │ Control                 │                         │
+│ Product Hunt    │ Musikey                 │ https://www.producthun… │
+│ Product Hunt    │ MaxClaw by MiniMax      │ https://www.producthun… │
+│ Product Hunt    │ Perplexity Computer     │ https://www.producthun… │
+│ Product Hunt    │ Alkemi                  │ https://www.producthun… │
+│ Product Hunt    │ Superset                │ https://www.producthun… │
+│ Product Hunt    │ Mastra Code             │ https://www.producthun… │
+│ GitHub Trending │ bytedance/deer-flow: An │ https://github.com/byt… │
+│                 │ open-source SuperAgent  │                         │
+│                 │ harness that            │                         │
+│                 │ researches, codes...    │                         │
+│ GitHub Trending │ alibaba/OpenSandbox:    │ https://github.com/ali… │
+│                 │ OpenSandbox is a        │                         │
+│                 │ general-purpose sandbox │                         │
+│                 │ platform for AI...      │                         │
+│ GitHub Trending │ Shubhamsaboo/awesome-l… │ https://github.com/Shu… │
+│                 │ Collection of awesome   │                         │
+│                 │ LLM apps with AI Agents │                         │
+│                 │ ...                     │                         │
+│ GitHub Trending │ K-Dense-AI/claude-scie… │ https://github.com/K-D… │
+│                 │ A set of ready to use   │                         │
+│                 │ Agent Skills for r...   │                         │
+│ GitHub Trending │ X-PLUG/MobileAgent:     │ https://github.com/X-P… │
+│                 │ Mobile-Agent: The       │                         │
+│                 │ Powerful GUI Agent      │                         │
+│                 │ Family                  │                         │
+│ GitHub Trending │ datawhalechina/hello-a… │ https://github.com/dat… │
+│                 │ 📚                      │                         │
+│                 │ 《从零开始构建智能体》… │                         │
+│ GitHub Trending │ NevaMind-AI/memU:       │ https://github.com/Nev… │
+│                 │ Memory for 24/7         │                         │
+│                 │ proactive agents like   │                         │
+│                 │ openclaw (moltbot,      │                         │
+│                 │ cl...                   │                         │
+│ GitHub Trending │ 666ghj/BettaFish:       │ https://github.com/666… │
+│                 │ 微舆：人人可用的多Agen… │                         │
+│ GitHub Trending │ crewAIInc/crewAI:       │ https://github.com/cre… │
+│                 │ Framework for           │                         │
+│                 │ orchestrating           │                         │
+│                 │ role-playing,           │                         │
+│                 │ autonomous AI age...    │                         │
+│ GitHub Trending │ jamwithai/production-a… │ https://github.com/jam… │
+│ TechCrunch AI   │ Google looks to tackle  │ https://techcrunch.com… │
+│                 │ longstanding RCS spam   │                         │
+│                 │ in India — but not      │                         │
+│                 │ alone                   │                         │
+│ TechCrunch AI   │ OpenAI reveals more     │ https://techcrunch.com… │
+│                 │ details about its       │                         │
+│                 │ agreement with the      │                         │
+│                 │ Pentagon                │                         │
+│ TechCrunch AI   │ Anthropic’s Claude      │ https://techcrunch.com… │
+│                 │ rises to No. 1 in the   │                         │
+│                 │ App Store following     │                         │
+│                 │ Pentagon dispute        │                         │
+│ TechCrunch AI   │ SaaS in, SaaS out:      │ https://techcrunch.com… │
+│                 │ Here’s what’s driving   │                         │
+│                 │ the SaaSpocalypse       │                         │
+│ TechCrunch AI   │ The trap Anthropic      │ https://techcrunch.com… │
+│                 │ built for itself        │                         │
+│ TechCrunch AI   │ The billion-dollar      │ https://techcrunch.com… │
+│                 │ infrastructure deals    │                         │
+│                 │ powering the AI boom    │                         │
+│ TechCrunch AI   │ OpenAI’s Sam Altman     │ https://techcrunch.com… │
+│                 │ announces Pentagon deal │                         │
+│                 │ with ‘technical         │                         │
+│                 │ safeguards’             │                         │
+│ TechCrunch AI   │ Pentagon moves to       │ https://techcrunch.com… │
+│                 │ designate Anthropic as  │                         │
+│                 │ a supply-chain risk     │                         │
+│ TechCrunch AI   │ Musk bashes OpenAI in   │ https://techcrunch.com… │
+│                 │ deposition, saying      │                         │
+│                 │ ‘nobody committed       │                         │
+│                 │ suicide because of...   │                         │
+│ TechCrunch AI   │ Anthropic vs. the       │ https://techcrunch.com… │
+│                 │ Pentagon: What’s        │                         │
+│                 │ actually at stake?      │                         │
+└─────────────────┴─────────────────────────┴─────────────────────────┘
+
+Generating AI Summary...
+╭─────────────────────── AI Summary (DeepSeek) ───────────────────────╮
+│                       AI 新闻摘要 (2025年1月)                       │
+│                                                                     │
+│ 🚀 热门产品与工具                                                   │
+│                                                                     │
+│ 1. Timber – Ollama for classical ML models (Hacker News)            │
+│                                                                     │
+│  • 是什么：Timber                                                   │
+│    是一个专为传统机器学习模型设计的推理服务器，类似于 Ollama        │
+│    之于大语言模型。它声称比 Python 实现快 336 倍。                  │
+│  • 为什么重要：这标志着 AI 基础设施正从 LLM                         │
+│    扩展到更广泛的机器学习领域，为传统 ML                            │
+│    模型提供高效的生产部署方案，可能降低企业运营成本。               │
+│                                                                     │
+│ 2. WebMCP 早期预览 (Hacker News)                                    │
+│                                                                     │
+│  • 是什么：一个新兴的模型控制协议，旨在标准化 AI                    │
+│    模型与应用程序之间的交互方式。                                   │
+│  • 为什么重要：标准化协议可能解决当前 AI                            │
+│    应用集成碎片化问题，促进模型互操作性，是 AI                      │
+│    基础设施成熟的重要信号。                                         │
+│                                                                     │
+│ 3. 产品猎手新品聚焦                                                 │
+│                                                                     │
+│  • CtrlAI：推测为 AI 辅助控制面板工具，可能集成多个 AI              │
+│    服务的管理功能。                                                 │
+│  • Clean Clode：AI 代码清理工具，专注于重构和优化代码质量。         │
+│  • Agent Commune：AI                                                │
+│    智能体协作平台，允许多个智能体分工合作完成任务。                 │
+│  • Voca AI：语音 AI 产品，可能专注于语音合成或语音识别应用。        │
+│  • Aura：身份验证产品，号称“最快的身份验证”，可能利用生物特征或行为 │
+│    分析。                                                           │
+│                                                                     │
+│ 4. GitHub 趋势项目                                                  │
+│                                                                     │
+│  • deer-flow (字节跳动)：开源 SuperAgent                            │
+│    框架，支持研究、编码和创作的多功能 AI 智能体平台。               │
+│  • OpenSandbox (阿里巴巴)：通用 AI 应用沙箱平台，为 AI              │
+│    应用提供安全隔离的运行环境。                                     │
+│  • MobileAgent (X-PLUG)：强大的 GUI                                 │
+│    智能体系列，专注于移动设备上的自动化操作。                       │
+│  • crewAI：编排角色扮演自主 AI                                      │
+│    智能体的框架，通过协作提高复杂任务完成效率。                     │
+│  • 微舆                                                             │
+│    (BettaFish)：多智能体舆情分析助手，从零实现不依赖任何框架，支持  │
+│    舆情预测和决策辅助。                                             │
+│                                                                     │
+│ 🔬 研究论文与突破                                                   │
+│                                                                     │
+│ 1. 开源 vs 闭源差距缩小 (Reddit)                                    │
+│                                                                     │
+│  • 是什么：2026年1月基准测试显示，94个 LLM                          │
+│    端点中，开源模型质量仅比专有模型低5个质量点。                    │
+│  • 为什么重要：这表明开源 AI 正在快速追赶商业产品，可能加速 AI      │
+│    民主化，降低企业采用门槛，改变市场竞争格局。                     │
+│                                                                     │
+│ 2. 大脑活动解码研究 (Hacker News)                                   │
+│                                                                     │
+│  • 是什么：从人类大脑活动中演化出心理内容的描述性文本。             │
+│  • 为什么重要：这是脑机接口和意识解码的重要进展，可能为神经疾病治疗 │
+│    、增强人机交互开辟新途径，但也引发隐私和伦理担忧。               │
+│                                                                     │
+│ 3. Hugging Face 论文亮点                                            │
+│                                                                     │
+│  • dLLM: Simple Diffusion Language                                  │
+│    Modeling：将扩散模型应用于语言建模的新方法，可能为文本生成提供替 │
+│    代方案。                                                         │
+│  • CUDA Agent：用于高性能 CUDA                                      │
+│    内核生成的大规模智能体强化学习，可能显著加速 GPU 计算优化。      │
+│  • R2IR &                                                           │
+│    R2ID：分辨率不变图像重采样器和扩散器，在32x32图像上训练，可泛化  │
+│    到任意纵横比和分辨率，以4步/秒的速度扩散4MP图像。                │
+│  • CiteAudit：验证 LLM                                              │
+│    时代科学参考文献的基准，解决“引用但未阅读”问题，对学术诚信至关重 │
+│    要。                                                             │
+│                                                                     │
+│ 4. 长视频生成突破                                                   │
+│                                                                     │
+│  • Mode Seeking meets Mean Seeking for Fast Long Video              │
+│    Generation：结合模式寻求和均值寻求的方法，加速生成长视频。       │
+│  • 为什么重要：视频生成是当前 AI                                    │
+│    热点，长视频生成能力将推动影视、游戏、教育等行业的变革。         │
+│                                                                     │
+│ 📰 行业与社区动态                                                   │
+│                                                                     │
+│ 1. 国防合同与伦理争议 (TechCrunch)                                  │
+│                                                                     │
+│  • 是什么：OpenAI 透露更多与五角大楼协议的细节，Anthropic           │
+│    因五角大楼争议在 App Store 排名上升，随后被指定为供应链风险。    │
+│  • 为什么重要：这凸显了 AI 公司与政府、军事合作引发的伦理困境。Sam  │
+│    Altman 强调“技术保障”，但公众对 AI                               │
+│    军事化应用的担忧持续增长。Anthropic 的困境展示了 AI              │
+│    公司在价值观与商业机会间的艰难平衡。                             │
+│                                                                     │
+│ 2. AI 基础设施投资热潮 (TechCrunch)                                 │
+│                                                                     │
+│  • 是什么：价值数十亿美元的基础设施交易正在推动 AI 繁荣。           │
+│  • 为什么重要：这反映了资本对 AI 硬件和云服务的巨大投入，是 AI      │
+│    从实验转向规模化应用的关键支撑，但也可能加剧资源集中和竞争壁垒。 │
+│                                                                     │
+│ 3. 社区技术讨论                                                     │
+│                                                                     │
+│  • AI 编写代码的提交归属 (Hacker News)：关于 AI                     │
+│    生成代码是否应在提交中注明的重要伦理和实践讨论，涉及知识产权和代 │
+│    码质量责任。                                                     │
+│  • AI 聊天广告支持模式演示 (Hacker News)：展示了“免费”广告支持 AI   │
+│    聊天的可能形态，预示未来 AI 服务的商业化路径。                   │
+│  • 卡内基梅隆现代 AI 课程 (Hacker News)：10-202 课程反映了 AI       │
+│    教育正在快速普及和系统化。                                       │
+│                                                                     │
+│ 4. 开源工具生态发展                                                 │
+│                                                                     │
+│  • easy-torch-tpu (Reddit)：简化在 Google TPU 上训练 PyTorch        │
+│    模型的工具，降低硬件使用门槛。                                   │
+│  • Logira (Hacker News)：AI 智能体运行的 eBPF                       │
+│    运行时审计工具，增强智能体系统的可观察性和安全性。               │
+│  • MicroGPT 解释与实现：小型化 GPT                                  │
+│    模型的交互式解释和实现，促进模型理解和教育。                     │
+│                                                                     │
+│ 5. 市场与竞争动态                                                   │
+│                                                                     │
+│  • 马斯克批评 OpenAI (TechCrunch)：在证词中抨击 OpenAI，称“没人因为 │
+│    Grok 自杀”，反映了 AI 领导者间的公开分歧和竞争白热化。           │
+│  • SaaSpocalypse 分析 (TechCrunch)：探讨 SaaS                       │
+│    市场变革的驱动因素，AI 可能正在重塑传统软件商业模式。            │
+│  • 谷歌解决印度 RCS 垃圾信息                                        │
+│    (TechCrunch)：科技巨头在特定市场解决通信问题的努力，显示 AI      │
+│    在信息治理中的应用。                                             │
+│                                                                     │
+│ 🔮 趋势洞察                                                         │
+│                                                                     │
+│  1 智能体生态爆发：从单智能体向多智能体协作发展，开源框架（如       │
+│    crewAI、deer-flow）降低开发门槛。                                │
+│  2 开源追赶闭源：质量差距缩小至5个点内，可能引发商业模式变革和企业  │
+│    采用策略调整。                                                   │
+│  3 硬件优化竞赛：针对 CPU、GPU、TPU                                 │
+│    的专门优化工具涌现，追求极致推理速度（如 Timber 的336倍加速）。  │
+│  4 AI 治理复杂化：国防合同、供应链风险、引用验证等议题凸显 AI       │
+│    治理需要技术、伦理、政策的多维应对。                             │
+│  5 生成能力扩展：从文本、图像向长视频、代码、科学内容生成深化，分辨 │
+│    率不变技术突破显示泛化能力提升。                                 │
+│  6 教育普及加速：从大学课程（CMU）到开源教程（hello-agents），AI    │
+│    知识传播体系正在快速建立。                                       │
+│                                                                     │
+│ ------------------------------------------------------------------- │
+│                                                                     │
+│ 总结：本月 AI 领域呈现“深度扩展”特征——技术上向传统                  │
+│ ML、长视频、脑机接口等纵深发展；生态上开源与闭源竞争加剧，智能体框  │
+│ 架多样化；治理上军事合作、学术诚信等议题凸显。基础设施投资热潮与工  │
+│ 具链成熟表明 AI                                                     │
+│ 正从研究快速转向规模化应用，但伦理争议和市场竞争也同步升级。        │
+╰─────────────────────────────────────────────────────────────────────╯
+[16:11:47] Feishu Notification: Message sent to Feishu      main.py:136
+           successfully (Custom App).                                  

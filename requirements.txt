@@ -1,0 +1,8 @@
+requests
+beautifulsoup4
+rich
+feedparser
+html2text
+schedule
+openai
+python-dotenv
