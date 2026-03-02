@@ -19,14 +19,35 @@ class Database:
         
         # Create table to track sent news
         # We use URL as the unique identifier
+        # V2: Added full_content, summary, category, score, entities
         cursor.execute('''
         CREATE TABLE IF NOT EXISTS sent_news (
             url TEXT PRIMARY KEY,
             title TEXT,
             source TEXT,
-            sent_at TIMESTAMP
+            sent_at TIMESTAMP,
+            full_content TEXT,
+            summary TEXT,
+            category TEXT,
+            score INTEGER,
+            entities TEXT
         )
         ''')
+        
+        # Check if new columns exist, if not add them (simple migration)
+        cursor.execute("PRAGMA table_info(sent_news)")
+        columns = [info[1] for info in cursor.fetchall()]
+        
+        if 'full_content' not in columns:
+            cursor.execute("ALTER TABLE sent_news ADD COLUMN full_content TEXT")
+        if 'summary' not in columns:
+            cursor.execute("ALTER TABLE sent_news ADD COLUMN summary TEXT")
+        if 'category' not in columns:
+            cursor.execute("ALTER TABLE sent_news ADD COLUMN category TEXT")
+        if 'score' not in columns:
+            cursor.execute("ALTER TABLE sent_news ADD COLUMN score INTEGER")
+        if 'entities' not in columns:
+            cursor.execute("ALTER TABLE sent_news ADD COLUMN entities TEXT")
         
         conn.commit()
         conn.close()
@@ -46,7 +67,7 @@ class Database:
         return result is None
 
     def mark_as_sent(self, item):
-        """Mark a news item as sent."""
+        """Mark a news item as sent with optional full details."""
         url = item.get('url')
         if not url:
             return
@@ -55,14 +76,20 @@ class Database:
         cursor = conn.cursor()
         
         try:
+            # Use INSERT OR REPLACE to update existing records with new analysis
             cursor.execute('''
-            INSERT OR IGNORE INTO sent_news (url, title, source, sent_at)
-            VALUES (?, ?, ?, ?)
+            INSERT OR REPLACE INTO sent_news (url, title, source, sent_at, full_content, summary, category, score, entities)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
             ''', (
                 url, 
                 item.get('title', ''), 
                 item.get('source', ''), 
-                datetime.now().isoformat()
+                datetime.now().isoformat(),
+                item.get('full_content', ''),
+                item.get('summary', ''),
+                item.get('category', ''),
+                item.get('score', 0),
+                item.get('entities', '')
             ))
             conn.commit()
         except Exception as e:

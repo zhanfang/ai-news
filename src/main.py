@@ -32,6 +32,7 @@ def main():
     parser = argparse.ArgumentParser(description="AI News Aggregator")
     parser.add_argument("--weekly", action="store_true", help="Generate a weekly digest from the database")
     parser.add_argument("--search", type=str, help="Search for news by keyword")
+    parser.add_argument("--all", action="store_true", help="Fetch all news items, ignoring whether they have been sent before")
     args = parser.parse_args()
 
     console.print(Panel.fit("[bold blue]AI News Aggregator[/bold blue]", subtitle="Fetching latest AI updates..."))
@@ -99,13 +100,18 @@ def main():
                         # For simplicity, call without args as defaults are set
                         news = fetcher.fetch()
                         if news:
-                            # Filter out already sent news
-                            new_items = [item for item in news if db.is_new(item.get('url'))]
+                            # Filter out already sent news unless --all is specified
+                            if args.all:
+                                new_items = news
+                                console.log(f"[green]✓[/green] Fetched {len(new_items)} items from {name} (ignoring history)")
+                            else:
+                                new_items = [item for item in news if db.is_new(item.get('url'))]
                             
                             if new_items:
                                 all_items = new_items # Rename for clarity
                                 all_news.extend(all_items)
-                                console.log(f"[green]✓[/green] Fetched {len(all_items)} new items from {name} (filtered {len(news) - len(all_items)} old)")
+                                if not args.all:
+                                    console.log(f"[green]✓[/green] Fetched {len(all_items)} new items from {name} (filtered {len(news) - len(all_items)} old)")
                             else:
                                 console.log(f"[yellow]![/yellow] No NEW items from {name} (all {len(news)} seen)")
                         else:
@@ -204,7 +210,7 @@ def main():
         if llm_client.client:
             with console.status("[bold green]Asking DeepSeek to summarize...[/bold green]", spinner="dots"):
                 # Pass balanced list to summarizer
-                summary = llm_client.summarize(summary_input)
+                summary, analyzed_items = llm_client.summarize(summary_input)
             
             console.print(Panel(Markdown(summary), title="AI Summary (DeepSeek)", border_style="green"))
 
@@ -226,9 +232,13 @@ def main():
                     # Mark items as sent in DB only if send successful (or assumed successful)
                     # AND if we are in daily mode (not weekly, as weekly just re-sends old stuff)
                     if result and not args.weekly:
-                        for item in summary_input:
+                        # Use analyzed_items if available, as they contain enriched data (summary, category, score)
+                        # If for some reason analysis failed and we only have summary text, fallback to summary_input
+                        items_to_save = analyzed_items if analyzed_items else summary_input
+                        
+                        for item in items_to_save:
                             db.mark_as_sent(item)
-                        console.log(f"[green]✓[/green] Marked {len(summary_input)} items as sent in DB")
+                        console.log(f"[green]✓[/green] Marked {len(items_to_save)} items as sent in DB with analysis data")
             else:
                 console.print("[yellow]Feishu configuration not found (Webhook or App ID). Skipping notification.[/yellow]")
 
