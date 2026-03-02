@@ -33,6 +33,7 @@ def main():
     parser.add_argument("--weekly", action="store_true", help="Generate a weekly digest from the database")
     parser.add_argument("--search", type=str, help="Search for news by keyword")
     parser.add_argument("--all", action="store_true", help="Fetch all news items, ignoring whether they have been sent before")
+    parser.add_argument("--analyze-only", action="store_true", help="Analyze previously fetched items from DB without fetching new ones")
     args = parser.parse_args()
 
     console.print(Panel.fit("[bold blue]AI News Aggregator[/bold blue]", subtitle="Fetching latest AI updates..."))
@@ -43,7 +44,29 @@ def main():
     db_path = os.path.join(project_dir, "news.db")
     db = Database(db_path)
     
-    if args.search:
+    # Initialize Deduplicator and ContentExtractor
+    deduplicator = Deduplicator()
+    extractor = ContentExtractor()
+
+    if args.analyze_only:
+        console.print("[bold green]Running in Analysis Mode...[/bold green]")
+        # Fetch unprocessed items from RawNews table
+        unanalyzed_items = db.get_unanalyzed_news(limit=150)
+        if not unanalyzed_items:
+            console.print("[yellow]No unanalyzed items found in RawNews table.[/yellow]")
+            return
+        
+        all_news = unanalyzed_items
+        console.print(f"Found {len(all_news)} unanalyzed items in DB.")
+        
+        # We need to ensure they have full content if missing
+        # (Though fetch step should have handled it, double check)
+        items_needing_content = [item for item in all_news if not item.get('full_content')]
+        if items_needing_content:
+             console.print(f"Fetching missing content for {len(items_needing_content)} items...")
+             # ... content fetching logic reused ...
+    
+    elif args.search:
         results = db.search_news(args.search)
         if not results:
             console.print(f"[red]No results found for '{args.search}'[/red]")
@@ -62,11 +85,7 @@ def main():
             console.print(table)
         return
 
-    # Initialize Deduplicator and ContentExtractor
-    deduplicator = Deduplicator()
-    extractor = ContentExtractor()
-
-    if args.weekly:
+    elif args.weekly:
         console.print("[bold green]Generating Weekly Digest...[/bold green]")
         all_news = db.get_weekly_news()
         if not all_news:
@@ -96,24 +115,33 @@ def main():
                 task = progress.add_task(description=f"Fetching from {name}...", total=None)
                 try:
                     if hasattr(fetcher, 'fetch'):
-                        # Check if fetch accepts arguments (some have defaults)
-                        # For simplicity, call without args as defaults are set
                         news = fetcher.fetch()
                         if news:
+                            # Save all fetched news to RawNews table
+                            saved_count = 0
+                            for item in news:
+                                # Ensure item has required fields
+                                if not item.get('url'): continue
+                                db.save_raw_news(item)
+                                saved_count += 1
+                            
+                            console.log(f"[green]✓[/green] Fetched and saved {saved_count} items from {name}")
+                            
+                            # For backward compatibility with the rest of main.py, we still populate all_news
+                            # But we should really fetch from DB later.
+                            # For now, let's keep the existing flow but filter from DB state if needed.
+                            
                             # Filter out already sent news unless --all is specified
                             if args.all:
                                 new_items = news
-                                console.log(f"[green]✓[/green] Fetched {len(new_items)} items from {name} (ignoring history)")
                             else:
                                 new_items = [item for item in news if db.is_new(item.get('url'))]
                             
                             if new_items:
-                                all_items = new_items # Rename for clarity
+                                all_items = new_items 
                                 all_news.extend(all_items)
-                                if not args.all:
-                                    console.log(f"[green]✓[/green] Fetched {len(all_items)} new items from {name} (filtered {len(news) - len(all_items)} old)")
                             else:
-                                console.log(f"[yellow]![/yellow] No NEW items from {name} (all {len(news)} seen)")
+                                console.log(f"[yellow]![/yellow] No NEW items to process from {name} (all seen)")
                         else:
                             console.log(f"[yellow]![/yellow] No items found from {name}")
                     else:
@@ -136,6 +164,10 @@ def main():
         all_news = unique_news
 
     # Display results
+    if not all_news:
+        console.print("[yellow]No items to process.[/yellow]")
+        return
+
     table = Table(title="AI News", show_header=True, header_style="bold magenta")
     table.add_column("Source", style="cyan", width=15)
     table.add_column("Title", style="white")
@@ -168,25 +200,38 @@ def main():
     # Enhance summary input with full text content (Top 150 items for max coverage)
     # If list is shorter than 150, it takes all.
     top_items = summary_input[:150]
-    console.print(f"\n[bold yellow]Extracting content for Top {len(top_items)} items...[/bold yellow]")
     
-    def fetch_content(item):
-        url = item.get('url')
-        if url:
-            item['full_content'] = extractor.extract(url)
-        return item
+    # Check which items need content extraction (if not present in DB or fetched raw)
+    items_to_extract = [item for item in top_items if not item.get('full_content')]
+    
+    if items_to_extract:
+        console.print(f"\n[bold yellow]Extracting content for {len(items_to_extract)} items...[/bold yellow]")
+        
+        def fetch_content(item):
+            url = item.get('url')
+            if url:
+                content = extractor.extract(url)
+                item['full_content'] = content
+                # Update RawNews if exists
+                if args.analyze_only or args.all: # Or generally
+                     # We can try to update DB regardless
+                     try:
+                         # We need a method to update content only, but save_raw_news does upsert/update
+                         db.save_raw_news(item)
+                     except: pass
+            return item
 
-    with Progress(
-        SpinnerColumn(),
-        TextColumn("[progress.description]{task.description}"),
-        transient=True,
-    ) as progress:
-        task = progress.add_task(description="Fetching content...", total=len(top_items))
-        # Increase workers to speed up batch extraction
-        with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
-            future_to_item = {executor.submit(fetch_content, item): item for item in top_items}
-            for future in concurrent.futures.as_completed(future_to_item):
-                progress.advance(task)
+        with Progress(
+            SpinnerColumn(),
+            TextColumn("[progress.description]{task.description}"),
+            transient=True,
+        ) as progress:
+            task = progress.add_task(description="Fetching content...", total=len(items_to_extract))
+            # Increase workers to speed up batch extraction
+            with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+                future_to_item = {executor.submit(fetch_content, item): item for item in items_to_extract}
+                for future in concurrent.futures.as_completed(future_to_item):
+                    progress.advance(task)
     
     for item in all_news:
         # Determine link text
@@ -238,6 +283,10 @@ def main():
                         
                         for item in items_to_save:
                             db.mark_as_sent(item)
+                            # If running in analyze-only mode, also mark raw news as analyzed
+                            if args.analyze_only:
+                                db.mark_as_analyzed(item.get('url'))
+                                
                         console.log(f"[green]✓[/green] Marked {len(items_to_save)} items as sent in DB with analysis data")
             else:
                 console.print("[yellow]Feishu configuration not found (Webhook or App ID). Skipping notification.[/yellow]")
