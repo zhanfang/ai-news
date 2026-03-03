@@ -5,7 +5,7 @@ notification:
   email:
     recipients:
       - fzhanxd@gmail.com
-      # - team@example.com  # Add more recipients here
+      - 705418893@qq.com
   feishu:
     enabled: true
 
