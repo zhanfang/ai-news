@@ -1,0 +1,26 @@
+# AI News Aggregator Configuration
+
+# Notification Recipients
+notification:
+  email:
+    recipients:
+      - fzhanxd@gmail.com
+      # - team@example.com  # Add more recipients here
+  feishu:
+    enabled: true
+
+# Source Fetch Limits (Max items to fetch per source)
+source_limits:
+  hacker_news: 50
+  product_hunt: 50
+  reddit: 50
+  hugging_face: 30
+  github_trending: 30
+  techcrunch: 30
+  official_blogs: 30
+
+# Analysis Settings
+analysis:
+  model: "deepseek-chat"
+  language: "zh-CN" # Force Chinese output
+  max_items_to_summarize: 150 # Top N items to send to LLM

@@ -10,6 +10,10 @@
 - [x] **Database Schema Upgrade**: Store full content, summaries, categories, and scores for future analysis.
 - [x] **Detailed Chinese Report**: Generate high-density, categorized AI news reports in Chinese.
 - [x] **Force Fetch Mode**: Added `--all` flag to fetch all news regardless of history.
+- [x] **Email Notifications**: Send detailed HTML reports via SMTP (Gmail, etc.).
+- [x] **Architecture Refactor**: Decoupled fetching and analysis with `RawNews` table for better data safety.
+- [x] **LaunchAgent Scheduling**: Replaced Cron with macOS LaunchAgent for reliable wake-up execution.
+- [x] **Configuration Management**: Migrated business config to `config.yaml` and secrets to `zshrc`.
 
 ## Medium Priority
 

@@ -1,8 +1,16 @@
 import sys
 import os
+from dotenv import load_dotenv
 
 # Add src to path to allow imports if running directly
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Use absolute path to ensure cron works correctly
+project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(project_dir)
+
+# Load environment variables from .env file explicitly
+# This ensures it works even if CWD is different (e.g. cron)
+# Use override=False to respect existing shell environment variables (e.g. from .zshrc)
+load_dotenv(os.path.join(project_dir, ".env"), override=False)
 
 from rich.console import Console
 from rich.table import Table
@@ -12,6 +20,7 @@ from rich.markdown import Markdown
 
 from src.llm_client import DeepSeekClient
 from src.feishu_client import FeishuClient
+from src.email_client import EmailClient
 from src.sources.hacker_news import HackerNewsFetcher
 from src.sources.hugging_face import HuggingFaceFetcher
 from src.sources.reddit import RedditFetcher
@@ -23,7 +32,7 @@ from src.database import Database
 from src.deduplicator import Deduplicator
 from src.content_extractor import ContentExtractor
 import concurrent.futures
-
+from datetime import datetime
 import argparse
 
 console = Console()
@@ -290,6 +299,20 @@ def main():
                         console.log(f"[green]✓[/green] Marked {len(items_to_save)} items as sent in DB with analysis data")
             else:
                 console.print("[yellow]Feishu configuration not found (Webhook or App ID). Skipping notification.[/yellow]")
+
+            # Send to Email
+            email_client = EmailClient()
+            if email_client.smtp_server and email_client.username:
+                with console.status("[bold green]Sending Email...[/bold green]", spinner="dots"):
+                    if args.weekly:
+                        subject = f"AI News Weekly Digest ({datetime.now().strftime('%Y-%m-%d')})"
+                    else:
+                        subject = f"AI News Daily Digest ({datetime.now().strftime('%Y-%m-%d')})"
+                    
+                    email_result = email_client.send_email(subject, summary)
+                    console.log(f"[blue]Email Notification:[/blue] {email_result}")
+            else:
+                console.print("[yellow]Email configuration not found. Skipping email notification.[/yellow]")
 
         else:
             console.print("[yellow]DeepSeek API Key not found. Set DEEPSEEK_API_KEY environment variable to enable AI summaries.[/yellow]")

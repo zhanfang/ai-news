@@ -442,3 +442,612 @@ Generating AI Summary...
 ╰─────────────────────────────────────────────────────────────────────╯
 [16:11:47] Feishu Notification: Message sent to Feishu      main.py:136
            successfully (Custom App).                                  
+Starting AI News Aggregator at 2026年 3月 3日 星期二 10时32分53秒 CST
+╭────────────────────╮
+│ AI News Aggregator │
+╰─ Fetching latest A─╯
+Failed to fetch OpenAI Blog: 404
+Failed to fetch Anthropic Research: 404
+Failed to fetch Meta AI: 400
+[10:33:06] ✓ Fetched and saved 6 items from Official Blogs  main.py:135
+           ! No NEW items to process from Official Blogs    main.py:151
+           (all seen)                                                  
+[10:33:11] ✓ Fetched and saved 8 items from Hacker News     main.py:135
+[10:33:13] ✓ Fetched and saved 22 items from Hugging Face   main.py:135
+           Papers                                                      
+Failed to fetch r/ArtificialIntelligence: 403
+[10:33:18] ✓ Fetched and saved 20 items from Reddit         main.py:135
+           ✓ Fetched and saved 50 items from Product Hunt   main.py:135
+[10:33:21] ✓ Fetched and saved 9 items from GitHub Trending main.py:135
+[10:33:22] ✓ Fetched and saved 10 items from TechCrunch AI  main.py:135
+
+Initial count: 47 items
+After deduplication: 47 items (removed 0 duplicates)
+
+Extracting content for 47 items...
+
+                                AI News                                
+┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Source          ┃ Title                   ┃ Link                    ┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ Hacker News     │ Zuckerberg's internal   │ https://zuckmail.verce… │
+│                 │ emails rendered as      │                         │
+│                 │ Facebook Messenger      │                         │
+│ Hacker News     │ New iPad Air, powered   │ https://www.apple.com/… │
+│                 │ by M4                   │                         │
+│ Hacker News     │ First in-utero stem     │ https://health.ucdavis… │
+│                 │ cell therapy for fetal  │                         │
+│                 │ spina bifida repair is  │                         │
+│                 │ safe: study             │                         │
+│ Hacker News     │ Against Query Based     │ https://matklad.github… │
+│                 │ Compilers               │                         │
+│ Hacker News     │ Iran unleashes Shahed   │ https://www.theguardia… │
+│                 │ drones aimed at targets │                         │
+│                 │ across Middle East      │                         │
+│ Hacker News     │ Mondrian Entered the    │ https://copyrightlatel… │
+│                 │ Public Domain. The      │                         │
+│                 │ Estate Disagrees        │                         │
+│ Hacker News     │ Language Model Contains │ https://arxiv.org/abs/… │
+│                 │ Personality Subnetworks │                         │
+│ Hacker News     │ A case for Go as the    │ https://getbruin.com/b… │
+│                 │ best language for AI    │                         │
+│                 │ agents                  │                         │
+│ Hugging Face    │ Shared Nature, Unique   │ https://huggingface.co… │
+│ Papers          │ Nurture: PRISM for      │                         │
+│                 │ Pluralistic Reasoning   │                         │
+│                 │ via In-context...       │                         │
+│ Hugging Face    │ CL4SE: A Context        │ https://huggingface.co… │
+│ Papers          │ Learning Benchmark For  │                         │
+│                 │ Software Engineering    │                         │
+│                 │ Tasks                   │                         │
+│ Hugging Face    │ How to Take a Memorable │ https://huggingface.co… │
+│ Papers          │ Picture? Empowering     │                         │
+│                 │ Users with Actionable   │                         │
+│                 │ Feedback                │                         │
+│ Hugging Face    │ DUET-VLM: Dual stage    │ https://huggingface.co… │
+│ Papers          │ Unified Efficient Token │                         │
+│                 │ reduction for VLM       │                         │
+│                 │ Training and I...       │                         │
+│ Hugging Face    │ Reinforcement-aware     │ https://huggingface.co… │
+│ Papers          │ Knowledge Distillation  │                         │
+│                 │ for LLM Reasoning       │                         │
+│ Hugging Face    │ Cognitive Models and AI │ https://huggingface.co… │
+│ Papers          │ Algorithms Provide      │                         │
+│                 │ Templates for Designing │                         │
+│                 │ Language A...           │                         │
+│ Reddit          │ [R] TorchLean:          │ https://www.reddit.com… │
+│ r/MachineLearn… │ Formalizing Neural      │                         │
+│                 │ Networks in Lean        │                         │
+│ Reddit          │ [D] How much time do    │ https://www.reddit.com… │
+│ r/MachineLearn… │ you actually lose       │                         │
+│                 │ trying to reproduce ML  │                         │
+│                 │ papers?                 │                         │
+│ Reddit          │ [P] Vera: a programming │ https://www.reddit.com… │
+│ r/MachineLearn… │ language designed for   │                         │
+│                 │ LLMs to write           │                         │
+│ Reddit          │ [D] The engineering     │ https://www.reddit.com… │
+│ r/MachineLearn… │ overhead of Verifiable  │                         │
+│                 │ ML: Why GKR + Hyrax for │                         │
+│                 │ on-device ...           │                         │
+│ Reddit          │ [D] How to get credits  │ https://www.reddit.com… │
+│ r/MachineLearn… │ to run experiments on   │                         │
+│                 │ closed source models as │                         │
+│                 │ a studen...             │                         │
+│ Reddit          │ [P] On-device Qwen3-TTS │ https://www.reddit.com… │
+│ r/MachineLearn… │ (1.7B/0.6B) inference   │                         │
+│                 │ on iOS and macOS via    │                         │
+│                 │ MLX-Swift ...           │                         │
+│ Reddit          │ [D] ICLR 2026           │ https://www.reddit.com… │
+│ r/MachineLearn… │ Registration Process    │                         │
+│ Reddit          │ Breaking : The small    │ https://www.reddit.com… │
+│ r/LocalLLaMA    │ qwen3.5 models have     │                         │
+│                 │ been dropped            │                         │
+│ Reddit          │ Qwen/Qwen3.5-9B ·       │ https://www.reddit.com… │
+│ r/LocalLLaMA    │ Hugging Face            │                         │
+│ Reddit          │ Visualizing All Qwen    │ https://www.reddit.com… │
+│ r/LocalLLaMA    │ 3.5 vs Qwen 3           │                         │
+│                 │ Benchmarks              │                         │
+│ Reddit          │ Running Qwen 3.5 0.8B   │ https://www.reddit.com… │
+│ r/LocalLLaMA    │ locally in the browser  │                         │
+│                 │ on WebGPU w/            │                         │
+│                 │ Transformers.js         │                         │
+│ Reddit          │ Qwen3.5 9B and 4B       │ https://www.reddit.com… │
+│ r/LocalLLaMA    │ benchmarks              │                         │
+│ Reddit          │ Is Qwen3.5-9B enough    │ https://www.reddit.com… │
+│ r/LocalLLaMA    │ for Agentic Coding?     │                         │
+│ Reddit          │ PSA: Qwen 3.5 requires  │ https://www.reddit.com… │
+│ r/LocalLLaMA    │ bf16 KV cache, NOT      │                         │
+│                 │ f16!!                   │                         │
+│ Reddit          │ Qwen 3.5 2B on Android  │ https://www.reddit.com… │
+│ r/LocalLLaMA    │                         │                         │
+│ Reddit          │ Qwen 3.5 27b: a         │ https://www.reddit.com… │
+│ r/LocalLLaMA    │ testament to the        │                         │
+│                 │ transformer             │                         │
+│                 │ architecture            │                         │
+│ Reddit          │ Running Qwen3.5-0.8B on │ https://www.reddit.com… │
+│ r/LocalLLaMA    │ my 7-year-old Samsung   │                         │
+│                 │ S10E                    │                         │
+│ Product Hunt    │ cmux                    │ https://www.producthun… │
+│ Product Hunt    │ Mastra Code             │ https://www.producthun… │
+│ Product Hunt    │ HelixDB                 │ https://www.producthun… │
+│ GitHub Trending │ Polymarket/agents:      │ https://github.com/Pol… │
+│                 │ Trade autonomously on   │                         │
+│                 │ Polymarket using AI     │                         │
+│                 │ Agents                  │                         │
+│ GitHub Trending │ TheCraigHewitt/seomach… │ https://github.com/The… │
+│                 │ A specialized Claude    │                         │
+│                 │ Code workspace for      │                         │
+│                 │ creating l...           │                         │
+│ GitHub Trending │ khoj-ai/khoj: Your AI   │ https://github.com/kho… │
+│                 │ second brain.           │                         │
+│                 │ Self-hostable. Get      │                         │
+│                 │ answers from the web    │                         │
+│                 │ o...                    │                         │
+│ GitHub Trending │ comet-ml/opik: Debug,   │ https://github.com/com… │
+│                 │ evaluate, and monitor   │                         │
+│                 │ your LLM applications,  │                         │
+│                 │ RAG system...           │                         │
+│ GitHub Trending │ EbookFoundation/free-p… │ https://github.com/Ebo… │
+│                 │ 📚 Freely available     │                         │
+│                 │ programming books       │                         │
+│ TechCrunch AI   │ Cursor has reportedly   │ https://techcrunch.com… │
+│                 │ surpassed $2B in        │                         │
+│                 │ annualized revenue      │                         │
+│ TechCrunch AI   │ ChatGPT uninstalls      │ https://techcrunch.com… │
+│                 │ surged by 295% after    │                         │
+│                 │ DoD deal                │                         │
+│ TechCrunch AI   │ No one has a good plan  │ https://techcrunch.com… │
+│                 │ for how AI companies    │                         │
+│                 │ should work with the    │                         │
+│                 │ government              │                         │
+│ TechCrunch AI   │ Users are ditching      │ https://techcrunch.com… │
+│                 │ ChatGPT for Claude —    │                         │
+│                 │ here’s how to make the  │                         │
+│                 │ switch                  │                         │
+│ TechCrunch AI   │ Tech workers urge DOD,  │ https://techcrunch.com… │
+│                 │ Congress to withdraw    │                         │
+│                 │ Anthropic label as a    │                         │
+│                 │ supply-chain...         │                         │
+│ TechCrunch AI   │ A married founder duo’s │ https://techcrunch.com… │
+│                 │ company, 14.ai, is      │                         │
+│                 │ replacing customer      │                         │
+│                 │ support teams a...      │                         │
+│ TechCrunch AI   │ Anthropic’s Claude      │ https://techcrunch.com… │
+│                 │ reports widespread      │                         │
+│                 │ outage                  │                         │
+│ TechCrunch AI   │ Investors spill what    │ https://techcrunch.com… │
+│                 │ they aren’t looking for │                         │
+│                 │ anymore in AI SaaS      │                         │
+│                 │ companies               │                         │
+└─────────────────┴─────────────────────────┴─────────────────────────┘
+
+Generating AI Summary...
+╭─────────────────────── AI Summary (DeepSeek) ───────────────────────╮
+│                        人工智能新闻分析报告                         │
+│                                                                     │
+│ 分析周期: 近期 (2026年2月下旬至3月初) 报告日期: 2026年3月 分析师:   │
+│ 战略AI分析师                                                        │
+│                                                                     │
+│ ------------------------------------------------------------------- │
+│                                                                     │
+│ 🏗️ 基础设施与模型                                                   │
+│                                                                     │
+│  • 标题: 通义千问Qwen3.5系列模型全面发布与社区热议                  │
+│     • 来源: Reddit r/LocalLLaMA (多个帖子)                          │
+│     • 内容:                                                         │
+│       通义千问（Qwen）团队发布了Qwen3.5系列模型，涵盖从0.8B到27B的  │
+│       多种规模。社区围绕其性能基准、部署实践（如WebGPU、移动端）、K │
+│       V缓存精度要求（bf16而非f16）以及不同规模模型（如9B、4B）的编  │
+│       码智能体能力展开了广泛讨论和测试。                            │
+│     • 意义:                                                         │
+│       这标志着开源大模型领域又一重要迭代。Qwen3.5系列在性能上对标甚 │
+│       至超越前代，其多尺寸覆盖和社区积极部署（包括在老旧手机和浏览  │
+│       器中运行）凸显了模型效率的提升和边缘计算AI的可行性，进一步推  │
+│       动了开源模型在本地和特定场景下的应用普及。                    │
+│  • 标题: 苹果发布搭载M4芯片的新款iPad Air                           │
+│     • 来源: Hacker News                                             │
+│     • 内容: 苹果公司发布了新款iPad                                  │
+│       Air，首次搭载M4芯片。该芯片拥有更快的CPU、GPU和神经引擎，内存 │
+│       带宽更高，统一内存容量增加50%，旨在为AI任务提供强大性能支持， │
+│       并配合iPadOS 26的新特性。                                     │
+│     • 意义:                                                         │
+│       这是苹果将高端AI计算能力进一步下放到中端消费级设备的重要举措  │
+│       。M4芯片的引入显著提升了移动设备的AI推理能力，为在平板电脑上  │
+│       运行更复杂的本地AI应用（如大型语言模型、图像生成模型）铺平了  │
+│       道路，加速了AI的终端侧部署趋势。                              │
+│  • 标题: DUET-VLM：视觉语言模型训练与推理的双阶段统一高效令牌缩减   │
+│     • 来源: Hugging Face Papers (arXiv:2602.18846)                  │
+│     • 内容:                                                         │
+│       DUET-VLM提出了一种双阶段压缩框架，通过协调视觉和语言骨干网络  │
+│       的处理，在保持高精度的同时，显著减少视觉语言模型（VLM）中视觉 │
+│       令牌的数量，从而降低计算开销。                                │
+│     • 意义:                                                         │
+│       视觉令牌过多是VLM计算成本高昂的核心瓶颈。DUET-VLM提供了一种系 │
+│       统性的解决方案，有望大幅提升VLM的训练和推理效率，推动多模态大 │
+│       模型在资源受限环境或实时应用中的部署，是VLM走向实用化的重要技 │
+│       术路径。                                                      │
+│  • 标题: TorchLean：在Lean中形式化神经网络                          │
+│     • 来源: Reddit r/MachineLearning                                │
+│     • 内容:                                                         │
+│       一项名为“TorchLean”的研究项目，旨在使用交互式定理证明器Lean来 │
+│       形式化定义和验证神经网络。                                    │
+│     • 意义:                                                         │
+│       将神经网络的形式化验证从理论推向实践。这项工作对于构建高可靠  │
+│       性、可证明安全的AI系统至关重要，特别是在自动驾驶、医疗诊断等  │
+│       安全攸关领域。它代表了AI与形式化方法交叉的前沿方向。          │
+│                                                                     │
+│ 🚀 应用与工具                                                       │
+│                                                                     │
+│  • 标题: cmux：为编码智能体构建的开源终端                           │
+│     • 来源: Product Hunt                                            │
+│     • 内容: cmux是一款专为与编码智能体（如Claude                    │
+│       Code）协同多任务处理而设计的开源终端。它具备垂直标签页、通知  │
+│       、内置浏览器等功能，基于Ghostty构建，采用Swift/AppKit而非Elec │
+│       tron/Tauri。                                                  │
+│     • 意义:                                                         │
+│       这反映了AI编码助手工作流催生的新型开发者工具需求。cmux通过优  │
+│       化界面交互和通知机制，旨在减少开发者在人类编程和AI辅助之间的  │
+│       上下文切换成本，提升人机协作编程的流畅度和效率。              │
+│  • 标题: Mastra Code：永不“压缩”的AI编码智能体                      │
+│     • 来源: Product Hunt                                            │
+│     • 内容: Mastra                                                  │
+│       Code是Mastra框架团队推出的AI编码智能体，主打解决现有编码智能  │
+│       体在深度编码过程中突然“压缩”或丢失上下文的问题，旨在提供更稳  │
+│       定、连贯的编程辅助体验。                                      │
+│     • 意义:                                                         │
+│       直击当前AI编程助手在实际使用中的核心痛点——长期任务中的上下文  │
+│       管理和状态保持。该产品的推出表明AI编程工具正从基础功能实现向  │
+│       优化用户体验、提升可靠性和深度协作能力演进。                  │
+│  • 标题: HelixDB：基于Rust构建的开源OLTP图向量数据库                │
+│     • 来源: Product Hunt                                            │
+│     • 内容:                                                         │
+│       HelixDB是一个用Rust编写的开源OLTP（在线事务处理）数据库，原生 │
+│       融合了图数据库和向量数据库的能力，旨在为AI智能体记忆系统或需  │
+│       要高度可扩展、高可用的事务型图/向量应用提供支持。             │
+│     • 意义:                                                         │
+│       随着AI智能体对复杂、结构化记忆和实时关系推理的需求增长，传统  │
+│       单一类型数据库面临挑战。HelixDB代表了“图向量”融合数据库的新兴 │
+│       趋势，专为下一代AI应用的数据层需求设计，可能成为构建复杂智能  │
+│       体系统的关键基础设施。                                        │
+│  • 标题: Polymarket/agents：使用AI智能体在Polymarket上自主交易      │
+│     • 来源: GitHub Trending                                         │
+│     • 内容:                                                         │
+│       Polymarket开源了一个仓库，提供使用AI智能体在其预测市场平台上  │
+│       进行自主交易的工具和框架。                                    │
+│     • 意义:                                                         │
+│       这是AI与去中心化金融（DeFi）、预测市场结合的一个具体案例。它  │
+│       展示了AI智能体在分析信息、执行策略和自动化金融操作方面的潜力  │
+│       ，同时也引发了关于AI驱动交易的市场影响、风险与监管的新讨论。  │
+│  • 标题: seomachine：基于Claude Code的SEO长文内容创作工作空间       │
+│     • 来源: GitHub Trending                                         │
+│     • 内容: 一个专门化的Claude                                      │
+│       Code工作空间配置，用于为企业研究、撰写、分析和优化长篇、SEO友 │
+│       好的博客内容，旨在生成能良好排名并服务目标受众的内容。        │
+│     • 意义:                                                         │
+│       体现了AI在垂直、专业化内容生产领域的深入应用。它不仅仅是通用  │
+│       写作助手，而是集成了SEO知识、内容策略和工作流的定制化解决方案 │
+│       ，标志着AI内容创作工具向行业化、流程化发展。                  │
+│  • 标题: khoj：可自托管的AI第二大脑                                 │
+│     • 来源: GitHub Trending                                         │
+│     • 内容:                                                         │
+│       Khoj是一个可自托管的个人AI助手平台，能够从网络或个人文档中获  │
+│       取答案，构建自定义智能体，安排自动化任务，进行深度研究，并支  │
+│       持接入各种在线或本地LLM（如GPT、Claude、Gemini、Llama、Qwen等 │
+│       ）。                                                          │
+│     • 意义:                                                         │
+│       迎合了用户对数据隐私、定制化和离线AI能力的需求。Khoj将RAG、智 │
+│       能体工作流和多种模型支持集成一体，是“个人AI”或“第二大脑”概念  │
+│       的一个代表性开源实现，推动AI向个性化、私有化方向发展。        │
+│  • 标题: opik：LLM应用与智能体工作流的调试、评估与监控平台          │
+│     • 来源: GitHub Trending                                         │
+│     • 内容:                                                         │
+│       Comet.ml推出的Opik是一个开源平台，为LLM应用、RAG系统和智能体  │
+│       工作流提供全面的链路追踪、自动化评估和生产就绪的仪表盘，用于  │
+│       调试、评估和监控。                                            │
+│     • 意义:                                                         │
+│       随着LLM应用从原型走向生产，可观测性、评估和调试成为关键挑战。 │
+│       Opik这类工具的出现，填补了AI工程化（MLOps for                 │
+│       LLM）生态中的重要空白，是构建可靠、可维护、高性能生产级AI应用 │
+│       的必要基础设施。                                              │
+│  • 标题: 在iOS/macOS上通过MLX-Swift进行端侧Qwen3-TTS推理            │
+│     • 来源: Reddit r/MachineLearning                                │
+│     • 内容:                                                         │
+│       一个开源项目实现了Qwen3文本转语音（TTS）模型（1.7B/0.6B）在iO │
+│       S和macOS设备上的本地推理，支持声音克隆、声音设计和流式TTS，无 │
+│       需云端服务。                                                  │
+│     • 意义:                                                         │
+│       展示了在移动和桌面操作系统上高效部署中等规模多模态模型的能力  │
+│       。结合苹果MLX框架的优化，该项目推动了高质量、个性化TTS功能的  │
+│       完全本地化、隐私安全且低延迟的应用，是边缘AI的出色范例。      │
+│  • 标题: Cursor年化营收据称已突破20亿美元                           │
+│     • 来源: TechCrunch AI                                           │
+│     • 内容:                                                         │
+│       据彭博社消息源透露，AI编程助手初创公司Cursor的年化营收运行率  │
+│       已超过20亿美元，并在过去三个月内翻倍。这一披露旨在回应近期市  │
+│       场对其增长可持续性的质疑。                                    │
+│     • 意义:                                                         │
+│       如果数据属实，这标志着AI开发者工具赛道出现了现象级的商业成功  │
+│       。Cursor的快速增长验证了AI编程助手市场的巨大规模和付费意愿，  │
+│       将极大刺激该领域的投资和创新竞争，并可能重塑软件开发工具的整  │
+│       体格局。                                                      │
+│                                                                     │
+│ 🔬 研究与论文                                                       │
+│                                                                     │
+│  • 标题: 语言模型秘密包含人格子网络                                 │
+│     • 来源: Hacker News (arXiv:2602.07164)                          │
+│     • 内容:                                                         │
+│       研究发现，大型语言模型（LLM）内部存在与不同人格特质相对应的、 │
+│       可分离的“子网络”。无需通过外部提示或微调，仅通过激活或抑制这  │
+│       些子网络，就能引导模型表现出特定、一致的人格行为。            │
+│     • 意义:                                                         │
+│       这项研究揭示了LLM行为可塑性的内部机制。它不仅为可控、可解释地 │
+│       调整模型行为提供了新方法（超越提示工程），也对理解模型如何存  │
+│       储和组合抽象概念具有重要科学价值，可能推动更安全、更符合预期  │
+│       的AI交互。                                                    │
+│  • 标题: PRISM：通过上下文结构建模实现多元化推理                    │
+│     • 来源: Hugging Face Papers (arXiv:2602.21317)                  │
+│     • 内容:                                                         │
+│       PRISM框架针对LLM趋向于“单一人工智能集群思维”而减少多样性的问  │
+│       题，通过在推理时动态构建个性化的“认知图”，为模型引入差异化的  │
+│       认知轨迹，从而增强创造性输出和诊断准确性。                    │
+│     • 意义:                                                         │
+│       挑战了当前追求模型一致性的主流范式，强调在推理过程中保持和利  │
+│       用多样性。PRISM为提升复杂问题解决中的思维广度、避免群体思维和 │
+│       激发创造力提供了新思路，对需要多角度分析的任务（如头脑风暴、  │
+│       诊断）有重要应用潜力。                                        │
+│  • 标题: CL4SE：软件工程任务的上下文学习基准                        │
+│     • 来源: Hugging Face Papers (arXiv:2602.23047)                  │
+│     • 内容:                                                         │
+│       CL4SE提出了一个全面的基准，用于评估LLM在软件工程任务（如代码  │
+│       生成、总结、审查、补丁评估）中的上下文学习能力，并通过四种不  │
+│       同的上下文类型展示了显著的性能提升。                          │
+│     • 意义:                                                         │
+│       上下文工程是释放LLM在软件工程领域潜力的关键。CL4SE为系统化地  │
+│       研究、比较和优化不同上下文策略提供了标准化的评估框架，将有力  │
+│       推动AI辅助编程工具在实用性和性能上的进步。                    │
+│  • 标题: 如何拍出令人难忘的照片？通过可操作反馈赋能用户             │
+│     • 来源: Hugging Face Papers (arXiv:2602.21877)                  │
+│     • 内容:                                                         │
+│       该研究提出“记忆性反馈”系统，利用多模态大语言模型和师生引导策  │
+│       略，分析照片并生成自然语言指导，帮助用户通过具体、可操作的修  │
+│       改建议来提升照片的“可记忆性”。                                │
+│     • 意义:                                                         │
+│       将图像记忆性研究从被动的分数预测或直接的图像修改，转变为以人  │
+│       为中心、具有教育意义的交互式指导。这代表了生成式AI在创意和教  │
+│       育领域应用的新方向——不仅生成内容，更赋能用户提升自身技能和审  │
+│       美。                                                          │
+│  • 标题: 用于LLM推理的强化学习感知知识蒸馏                          │
+│     • 来源: Hugging Face Papers (arXiv:2602.22495)                  │
+│     • 内容:                                                         │
+│       该研究提出一种结合强化学习（RL）的知识蒸馏方法，通过“信任区域 │
+│       比率蒸馏”解决在RL后训练的大模型向小模型进行知识迁移时遇到的分 │
+│       布不匹配和目标干扰问题。                                      │
+│     • 意义:                                                         │
+│       RL后训练是提升LLM复杂推理能力的重要手段，但得到的模型通常很大 │
+│       。此项工作使得将这种增强的推理能力高效地蒸馏到更小、更实用的  │
+│       学生模型中成为可能，对于在资源受限环境下部署高性能推理模型至  │
+│       关重要。                                                      │
+│  • 标题: 认知模型与AI算法为设计语言智能体提供模板                   │
+│     • 来源: Hugging Face Papers (arXiv:2602.22523)                  │
+│     • 内容:                                                         │
+│       研究探讨如何借鉴认知科学模型和经典AI算法的设计原则（如工作记  │
+│       忆、规划、强化学习），将多个LLM组合成模块化智能体。智能体模板 │
+│       用于指定角色和功能组成。                                      │
+│     • 意义:                                                         │
+│       为超越单一LLM能力的复杂问题提供了系统化工程思路。它将AI智能体 │
+│       的设计从特设的、基于经验的构建，转向有理论指导的、模块化的架  │
+│       构，有望催生更强大、更通用且更易于理解和设计的智能体系统。    │
+│  • 标题: 反对基于查询的编译器                                       │
+│     • 来源: Hacker News                                             │
+│     • 内容:                                                         │
+│       一篇博客文章批判性地分析了当前流行的“基于查询的编译器”设计范  │
+│       式。作者指出，虽然这种增量计算的思想在理论上很优雅，但在实践  │
+│       中可能导致复杂的缓存失效、难以调试和性能不可预测等问题，并讨  │
+│       论了其适用的边界。                                            │
+│     • 意义:                                                         │
+│       在编程语言和编译器设计社区引发重要讨论。它提醒开发者，任何技  │
+│       术范式都有其权衡和适用场景，盲目追随潮流可能引入不必要的复杂  │
+│       性。这对于AI时代同样重要，因为编译器技术（如MLIR）是AI框架和  │
+│       硬件优化的基础。                                              │
+│                                                                     │
+│ 💰 融资与并购                                                       │
+│                                                                     │
+│ (本批次新闻中无直接相关的融资与并购事件)                            │
+│                                                                     │
+│ ⚖️ 政策与监管                                                       │
+│                                                                     │
+│  • 标题: 蒙德里安作品进入公有领域引发的遗产纠纷                     │
+│     • 来源: Hacker News                                             │
+│     • 内容:                                                         │
+│       著名艺术家皮特·蒙德里安的作品版权期限已届满，依法应进入公有领 │
+│       域。然而，其遗产管理方对此持有异议并可能采取法律行动，引发了  │
+│       关于经典艺术作品版权到期后，遗产方权益与公众使用自由之间界限  │
+│       的争议。                                                      │
+│     • 意义:                                                         │
+│       此事件是AI生成艺术时代背景下，一个具有代表性的版权法前沿案例  │
+│       。它触及了训练数据合法性、数字遗产管理以及文化遗产公共获取权  │
+│       等核心问题。判决结果将为AI公司使用历史艺术数据进行模型训练提  │
+│       供重要的法律先例参考。                                        │
+│  • 标题: 伊朗向中东目标部署“沙希德”无人机                           │
+│     • 来源: Hacker News                                             │
+│     • 内容:                                                         │
+│       伊朗开始在中东地区大规模部署其“沙希德”系列攻击无人机，该型无  │
+│       人机此前已在乌克兰战场上广泛使用。报道称这些无人机已袭击了巴  │
+│       林、科威特、阿联酋等地的目标。                                │
+│     • 意义:                                                         │
+│       凸显了自主武器系统（AWS）扩散带来的地缘政治与安全风险。廉价、 │
+│       可大量生产的攻击型无人机正在改变冲突形态，降低了发动袭击的门  │
+│       槛。这加剧了国际社会对制定AI及自主武器国际监管规则的紧迫性讨  │
+│       论，涉及技术出口管制、使用伦理和问责制等。                    │
+│                                                                     │
+│ 📰 行业与社区                                                       │
+│                                                                     │
+│  • 标题: 扎克伯格内部邮件被渲染为Facebook Messenger界面             │
+│     • 来源: Hacker News                                             │
+│     • 内容:                                                         │
+│       一个名为“Zuckmail”的网站将马克·扎克伯格在Facebook（Meta）发展 │
+│       历程中的一系列内部邮件（涉及Instagram收购、用户隐私、竞争策略 │
+│       等争议话题），以仿Facebook                                    │
+│       Messenger的聊天界面形式可视化呈现出来。                       │
+│     • 意义:                                                         │
+│       该项目利用AI时代的数据可视化和交互设计，以一种更生动、更具传  │
+│       播力的方式，重新呈现了科技巨头发展史上的关键决策内幕。它反映  │
+│       了公众和科技社区对平台权力、商业伦理和透明度持续的关注与审视  │
+│       ，也展示了数据叙事的新形式。                                  │
+│  • 标题: 首次用于胎儿脊柱裂修复的宫内干细胞疗法被证明安全           │
+│     • 来源: Hacker News                                             │
+│     • 内容:                                                         │
+│       加州大学戴维斯分校健康中心的研究团队成功完成了全球首例结合胎  │
+│       儿手术与人类胎盘来源干细胞移植的脊柱裂治疗一期临床试验，结果  │
+│       发表于《柳叶刀》，表明该疗法安全可行。                        │
+│     • 意义:                                                         │
+│       这是再生医学与AI交叉领域的里程碑。AI在干细胞分化模拟、手术方  │
+│       案规划和术后预测等方面正发挥越来越大的作用。该疗法的成功不仅  │
+│       为先天性缺陷治疗带来希望，也为AI辅助的个性化精准医疗提供了极  │
+│       具价值的临床场景和数据基础。                                  │
+│  • 标题: 为AI智能体辩护：Go是最佳语言                               │
+│     • 来源: Hacker News                                             │
+│     • 内容:                                                         │
+│       一篇博客文章论证了Go语言是构建AI智能体的最佳选择。作者从并发  │
+│       模型（goroutines）、性能、部署简便性、强类型系统以及丰富的标  │
+│       准库等方面，对比了Python等语言，认为Go更适合构建高效、可靠、  │
+│       可维护的智能体后端系统。                                      │
+│     • 意义:                                                         │
+│       在AI应用开发栈中引发了关于技术选型的讨论。随着AI智能体从实验  │
+│       脚本转向需要7x24小时运行、高并发处理、易于部署的生产级服务，  │
+│       对底层系统的工程要求发生变化。Go等系统级语言的兴起，反映了AI  │
+│       工程化进程中后端架构的演进趋势。                              │
+│  • 标题: Vera：一种专为LLM编写而设计的编程语言                      │
+│     • 来源: Reddit r/MachineLearning                                │
+│     • 内容:                                                         │
+│       社区讨论一种名为Vera的新编程语言，其设计目标并非直接供人类使  │
+│       用，而是优化LLM生成代码的准确性、安全性和可预测性。           │
+│     • 意义:                                                         │
+│       代表了“AI原生编程语言”的探索。如果LLM将成为主要的生产力工具， │
+│       那么为其设计更适配的“交流媒介”或“思维工具”就变得合理。这可能  │
+│       从根本上改变未来编程的形式，从人类思维映射转为AI思维优化。    │
+│  • 标题: 可验证机器学习的工程开销：为何选择GKR +                    │
+│    Hyrax进行设备端ZK-ML？                                           │
+│     • 来源: Reddit r/MachineLearning                                │
+│     • 内容:                                                         │
+│       社区讨论在资源受限的设备上实现可验证机器学习（如零知识证明机  │
+│       器学习，ZK-ML）所面临的巨大工程挑战，并探讨为何GKR和Hyrax等特 │
+│       定证明系统被认为更适合此类场景。                              │
+│     • 意义:                                                         │
+│       反映了隐私计算、联邦学习与AI结合向实用化迈进时的深层技术权衡  │
+│       。在设备端进行可验证计算对于保护用户数据隐私至关重要，但其性  │
+│       能开销和工程复杂度是主要障碍。此类讨论推动了该领域寻找最优解  │
+│       的努力。                                                      │
+│  • 标题: 学生研究者如何获取积分在闭源模型上                         │
+│                                                                     │
+│                           AI 新闻分析报告                           │
+│                                                                     │
+│ 🏗️ 基础设施与模型                                                   │
+│                                                                     │
+│  • 标题: Anthropic 的 Claude 服务出现大规模中断                     │
+│     • 来源: TechCrunch AI                                           │
+│     • 内容: 2026年3月2日，Anthropic 的 Claude                       │
+│       服务遭遇大规模中断，数千名用户报告无法访问 Claude.ai 和       │
+│       Claude Code 服务，主要问题集中在登录环节。公司表示 Claude API │
+│       运行正常。                                                    │
+│     • 意义: 此次中断发生在用户因 OpenAI 与美国国防部合作而大量转向  │
+│       Claude 的关键时期，凸显了主流 AI                              │
+│       服务在面临需求激增时的稳定性挑战。服务可靠性直接关系到用户信  │
+│       任和市场份额的巩固，对 Anthropic 是一次重大压力测试。         │
+│                                                                     │
+│ 🚀 应用与工具                                                       │
+│                                                                     │
+│  • 标题: 夫妻创始团队的公司 14.ai 正在取代初创公司的客服团队        │
+│     • 来源: TechCrunch AI                                           │
+│     • 内容: 由 Y Combinator 支持的初创公司 14.ai 利用 AI            │
+│       技术替代传统的人工客服团队。该公司是众多获得风险投资青睐的 AI │
+│       客服初创公司（如 Decagon, Parloa,                             │
+│       Sierra）之一，正在改变业务流程外包（BPO）行业。               │
+│     • 意义: 这标志着 AI                                             │
+│       应用正从辅助工具转向直接替代核心人力资源，特别是在客服等高重  │
+│       复性领域。这种趋势可能引发劳动力市场结构性变化，同时为初创公  │
+│       司提供了通过自动化大幅降低运营成本的新路径。                  │
+│                                                                     │
+│ 🔬 研究与论文                                                       │
+│                                                                     │
+│  • 标题: 投资者透露他们不再青睐何种 AI SaaS 公司                    │
+│     • 来源: TechCrunch AI                                           │
+│     • 内容: 尽管 AI 投资热潮持续，但投资者开始对某些类型的 AI SaaS  │
+│       初创公司失去兴趣。报道指出，许多公司仅仅在品牌名中加入“AI”已  │
+│       不足以吸引投资，投资者正在寻找更具实质创新和明确市场定位的项  │
+│       目。                                                          │
+│     • 意义: 这表明 AI                                               │
+│       投资市场正在从早期的概念炒作阶段进入理性和成熟期。投资者更加  │
+│       注重技术的实际应用场景、商业模式的可持续性以及公司的差异化竞  │
+│       争力，这对 AI 创业公司的质量提出了更高要求。                  │
+│                                                                     │
+│ 💰 融资与并购                                                       │
+│                                                                     │
+│ (本批新闻中无直接关于新融资或并购事件的条目)                        │
+│                                                                     │
+│ ⚖️ 政策与监管                                                       │
+│                                                                     │
+│  • 标题: 科技工作者敦促国防部及国会撤销对 Anthropic                 │
+│    的“供应链风险”标签                                               │
+│     • 来源: TechCrunch AI                                           │
+│     • 内容: 数百名科技工作者签署公开信，敦促美国国防部撤销将        │
+│       Anthropic                                                     │
+│       列为“供应链风险”的决定，并呼吁国会审查动用此类特殊权力针对一  │
+│       家美国科技公司是否恰当。                                      │
+│     • 意义:                                                         │
+│       这反映了科技行业内部对政府过度干预和将商业公司“国家安全化”的  │
+│       担忧。此举可能开创一个危险的先例，即政府可以基于政治或合同分  │
+│       歧（如 Anthropic                                              │
+│       拒绝国防部合作）而动用行政权力打压商业竞争对手，影响产业公平  │
+│       竞争和创新环境。                                              │
+│  • 标题: 无人就 AI 公司应如何与政府合作制定出良好方案               │
+│     • 来源: TechCrunch AI                                           │
+│     • 内容: 报道指出，目前缺乏 AI                                   │
+│       公司与美国政府合作的清晰框架和准则。以 OpenAI 接手 Anthropic  │
+│       放弃的国防部合同后引发的公众质疑为例，Sam Altman              │
+│       试图公开答疑但效果有限，凸显了此类合作的复杂性和争议性。      │
+│     • 意义: 这暴露了 AI                                             │
+│       技术民用与军用边界模糊所带来的巨大伦理、商业和公关挑战。缺乏  │
+│       透明、公认的准则，使得任何此类合作都可能引发用户反弹、员工抗  │
+│       议和品牌危机，阻碍了 AI                                       │
+│       技术在国家安全等关键领域的负责任应用。                        │
+│                                                                     │
+│ 📰 行业与社区                                                       │
+│                                                                     │
+│  • 标题: ChatGPT 在国防部交易后卸载量激增 295%                      │
+│     • 来源: TechCrunch AI                                           │
+│     • 内容: 市场情报公司 Sensor Tower 数据显示，在 OpenAI           │
+│       与美国国防部（在特朗普政府下更名为“战争部”）达成交易的消息传  │
+│       出后，美国地区 ChatGPT                                        │
+│       移动应用的日卸载量在2026年2月28日环比激增了295%。             │
+│     • 意义: 这是消费者用行动对 AI                                   │
+│       公司与军方合作投出的“反对票”，直接体现了公众对 AI             │
+│       技术军事化应用的强烈担忧和道德抵触。这种大规模的用户流失不仅  │
+│       对 OpenAI                                                     │
+│       的消费者业务造成即时冲击，也为整个行业敲响了警钟：企业的价值  │
+│       观和合作选择将直接影响其市场生存。                            │
+│  • 标题: 用户正弃用 ChatGPT 转向 Claude——以下是切换指南             │
+│     • 来源: TechCrunch AI                                           │
+│     • 内容: 在 OpenAI                                               │
+│       及其一系列争议（特别是与国防部合作）之后，许多用户开始转向    │
+│       Anthropic 的 Claude。导火索是 Anthropic 明确拒绝国防部将其 AI │
+│       模型用于大规模国内监控或全自主武器。                          │
+│     • 意义: 这标志着 AI                                             │
+│       消费市场的竞争格局可能因“价值观”和“伦理立场”而重塑。Anthropic │
+│       坚守的“负责任AI”原则正在转化为一种差异化的市场竞争优势，吸引  │
+│       了对隐私、伦理有更高要求的用户群体，迫使其他厂商必须更严肃地  │
+│       对待其技术的社会影响。                                        │
+│  • 标题: Anthropic 的 Claude 服务出现大规模中断                     │
+│     • 来源: TechCrunch AI                                           │
+│     • 意义（补充行业视角）: 从行业角度看，此次中断发生在 Claude     │
+│       因伦理立场获得大量新用户涌入的时刻，暴露出快速增长带来的基础  │
+│       设施压力。它提醒所有 AI                                       │
+│       服务提供商，在追求市场份额和道德高地的同时，确保服务的技术鲁  │
+│       棒性和可扩展性同等重要，否则可能错失战略机遇。                │
+╰─────────────────────────────────────────────────────────────────────╯
+[10:36:04] Feishu Notification: Message sent to Feishu      main.py:282
+           successfully (Custom App).                                  
+           ✓ Marked 47 items as sent in DB with analysis    main.py:297
+           data                                                        
+Finished successfully at 2026年 3月 3日 星期二 10时36分04秒 CST
+----------------------------------------

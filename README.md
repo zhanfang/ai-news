@@ -1,19 +1,20 @@
 # AI News Aggregator (AI 新闻聚合助手)
 
-这是一个自动化的 AI 新闻聚合工具，旨在帮助你每天早晨快速掌握全球 AI 领域的最新动态。它会从多个高质量科技源抓取信息，使用 DeepSeek 大模型生成深度中文摘要，并推送到你的飞书（Feishu）群组。
-
-![Terminal Preview](https://via.placeholder.com/800x400?text=Terminal+Preview)
+这是一个自动化的 AI 新闻聚合工具，旨在帮助你每天早晨快速掌握全球 AI 领域的最新动态。它会从多个高质量科技源抓取信息，使用 DeepSeek 大模型生成深度中文摘要，并推送到你的飞书（Feishu）群组和邮箱。
 
 ## 🌟 功能亮点
 
 *   **多源聚合**：一站式获取 Hacker News, Hugging Face Papers, Reddit, Product Hunt, GitHub Trending, TechCrunch AI 等 6 大源的最新 AI 资讯。
-*   **深度摘要**：利用 DeepSeek LLM 生成详细的中文研报，包含“热门产品”、“前沿研究”和“行业动态”三大板块。
-*   **飞书推送**：格式精美的飞书卡片消息，支持原链接直达。
-*   **自动化运行**：支持注册为系统命令及每日定时任务。
+*   **深度研报**：利用 DeepSeek LLM 生成高密度的中文研报，对每条重要新闻进行“What/Why”深度解析。
+*   **多渠道推送**：支持飞书（Feishu）卡片消息和精美的 HTML 邮件推送。
+*   **可靠运行**：
+    *   **采集与分析分离**：原始数据优先入库，支持离线重试和历史回溯。
+    *   **智能唤醒**：使用 macOS LaunchAgent，确保电脑唤醒后自动补发错过的早报。
+    *   **配置分离**：敏感密钥存储在系统环境变量，业务配置在 `config.yaml`，安全又灵活。
 
 ---
 
-## 🚀 快速开始 (小白教程)
+## 🚀 快速开始
 
 ### 1. 环境准备
 
@@ -32,88 +33,109 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 2. 配置密钥
+### 2. 配置密钥 (安全模式)
 
-本项目需要 DeepSeek API 和 飞书应用凭证。为了安全，建议将密钥配置在你的个人配置文件 `~/.zshrc` (或 `~/.bashrc`) 中，而不是项目文件里。
+为了防止密钥泄露，请将敏感 API Key 配置在你的 Shell 配置文件中 (`~/.zshrc` 或 `~/.bashrc`)。
 
-1.  打开你的配置文件：
-    ```bash
-    nano ~/.zshrc
-    ```
-2.  在文件末尾添加以下内容（替换为你自己的 Key）：
-    ```bash
-    # AI News Aggregator Config
-    export DEEPSEEK_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxx"
-    
-    # 飞书配置 (需要创建一个企业自建应用)
-    export FEISHU_APP_ID="cli_xxxxxxxx"
-    export FEISHU_APP_SECRET="xxxxxxxxxxxxxxxxxxxxxxxx"
-    export FEISHU_RECEIVER_ID="oc_xxxxxxxxxxxxxxxxxxxxxxxx" # 群组的 chat_id
-    export FEISHU_RECEIVER_ID_TYPE="chat_id"
-    ```
-3.  保存并退出 (Ctrl+O, Enter, Ctrl+X)，然后使配置生效：
-    ```bash
-    source ~/.zshrc
-    ```
+```bash
+# 打开配置文件
+nano ~/.zshrc
 
-> **如何获取飞书 chat_id？**
-> 1. 将你的飞书机器人拉入目标群组。
-> 2. 运行本项目提供的工具脚本：`python3 src/get_chat_id.py`
+# 在末尾添加以下内容：
+# ------------------------------------------------
+# AI News Aggregator Config
+export DEEPSEEK_API_KEY="sk-xxxxxxxxxxxxxxxxxxxxxxxx"
 
-### 3. 运行测试
+# 飞书配置 (可选)
+export FEISHU_APP_ID="cli_xxxxxxxx"
+export FEISHU_APP_SECRET="xxxxxxxxxxxxxxxxxxxxxxxx"
+export FEISHU_RECEIVER_ID="oc_xxxxxxxxxxxxxxxxxxxxxxxx"
+export FEISHU_RECEIVER_ID_TYPE="chat_id"
+
+# 邮件配置 (可选)
+export SMTP_SERVER="smtp.gmail.com"
+export SMTP_PORT="587"
+export SMTP_USER="your_email@gmail.com"
+export SMTP_PASS="your_app_password" # 注意：使用应用专用密码，非登录密码
+export SMTP_FROM="your_email@gmail.com"
+export SMTP_TO="your_email@gmail.com"
+# ------------------------------------------------
+
+# 保存生效
+source ~/.zshrc
+```
+
+### 3. 业务配置 (config.yaml)
+
+项目根目录下的 `config.yaml` 用于管理非敏感配置（如收件人列表、抓取数量等）。
+
+```yaml
+notification:
+  email:
+    recipients:
+      - your_email@gmail.com
+      - team_member@example.com
+
+source_limits:
+  hacker_news: 50
+  product_hunt: 50
+  # ...
+```
+
+### 4. 运行测试
 
 在终端直接运行：
 
 ```bash
+# 默认模式：仅抓取新消息（适合定时任务）
 python3 src/main.py
-```
 
-如果配置正确，你将看到终端开始抓取新闻，生成摘要，并在几分钟后你的飞书群组会收到一条消息。
+# 强制模式：抓取所有消息（忽略历史记录，适合测试）
+python3 src/main.py --all
+
+# 分析模式：仅分析数据库中已抓取但未发送的新闻（适合离线重试）
+python3 src/main.py --analyze-only
+```
 
 ---
 
-## 🛠️ 进阶玩法：自动化运行
+## 🛠️ 自动化部署 (macOS)
 
-想要每天早上自动收到新闻早报？
+推荐使用 macOS 原生的 LaunchAgent 替代 Crontab，它能在电脑从睡眠中唤醒后自动补发任务。
 
-### 1. 注册为系统命令
-
-运行以下命令，创建一个名为 `ai-news` 的快捷指令：
+### 1. 安装定时任务
 
 ```bash
-# 创建存放脚本的目录
-mkdir -p ~/.local/bin
+# 赋予脚本执行权限
+chmod +x run_ai_news.sh
 
-# 创建软链接
-ln -sf $(pwd)/run_ai_news.sh ~/.local/bin/ai-news
+# 复制配置文件到系统目录
+mkdir -p ~/Library/LaunchAgents
+cp com.bytedance.ai-news-aggregator.plist ~/Library/LaunchAgents/
 
-# 确保 ~/.local/bin 在你的 PATH 中 (如果 ai-news 没反应，检查你的 .zshrc)
+# 修改 plist 中的路径 (如果你的代码不在 /Users/bytedance/Documents/...)
+# vim ~/Library/LaunchAgents/com.bytedance.ai-news-aggregator.plist
+
+# 加载任务
+launchctl load ~/Library/LaunchAgents/com.bytedance.ai-news-aggregator.plist
 ```
 
-现在，你在任何地方输入 `ai-news` 即可运行。
+### 2. 验证状态
 
-### 2. 设置每日定时任务 (Mac/Linux)
+```bash
+launchctl list | grep ai-news
+```
 
-使用 `crontab` 设置每天早上 8:00 自动运行。
-
-1.  运行命令：
-    ```bash
-    (crontab -l 2>/dev/null; echo "0 8 * * * ~/.local/bin/ai-news >> $(pwd)/cron.log 2>&1") | crontab -
-    ```
-2.  **Mac 用户注意**：你需要给 `cron` 授予**完全磁盘访问权限**。
-    *   打开 **系统设置** -> **隐私与安全性** -> **完全磁盘访问权限**。
-    *   添加 `/usr/sbin/cron` 并启用。
+如果显示状态码 `0`，说明任务已就绪。每天早上 09:00 系统会自动运行。
 
 ---
 
 ## 📂 项目结构
 
-*   `src/main.py`: 主程序入口。
-*   `src/sources/`: 各个新闻源的抓取脚本。
-*   `src/llm_client.py`: DeepSeek LLM 调用逻辑。
-*   `src/feishu_client.py`: 飞书消息发送逻辑。
-*   `run_ai_news.sh`: 用于自动化运行的 Shell 包装脚本。
-
-## 🤝 贡献
-
-欢迎提交 Issue 或 Pull Request 来增加新的数据源或功能！
+*   `src/main.py`: 主程序入口
+*   `src/database.py`: SQLite 数据库管理 (RawNews, SentNews)
+*   `src/llm_client.py`: DeepSeek API 客户端
+*   `src/email_client.py`: SMTP 邮件客户端
+*   `src/feishu_client.py`: 飞书机器人客户端
+*   `config.yaml`: 业务配置文件
+*   `news.db`: 本地数据库 (存储抓取历史)
